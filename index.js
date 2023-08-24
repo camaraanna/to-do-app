@@ -32,7 +32,8 @@ app.get("/", (req, res) => {
 
 app.get("/tasks", (req, res) => {
   const tasks = JSON.parse(fs.readFileSync("db.json")).tasks; // We retrieve the tasks in the JSON file.
-  res.render("tasks", { tasks });
+  let message = 'TEST'
+  res.render("tasks", { tasks, message });
 });
 
 app.listen(3000, () => console.log("The server is running on port 3000"));

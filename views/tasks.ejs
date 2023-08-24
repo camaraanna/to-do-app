@@ -47,6 +47,16 @@
       button {
         width: inherit;
       }
+
+      .message {
+        background-color: #fff;
+        border: 1px solid pink;
+        border-radius: 0.5em;
+        padding: 0.15em;
+        margin: auto;
+        text-align: center;
+        max-width: 50%;
+      }
     </style>
   </head>
 
@@ -56,6 +66,10 @@
         <img src="https://agiliteach.b-cdn.net/medias/images/todo-app.png" alt="logo" />
       </div>
       <hr />
+
+      <% if (message) { %>
+      <div class="message"><%= message %></div>
+      <% } %>
       <div class="container">
         <form action="/tasks/create" method="POST">
           <div class="grid">
